@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Ink Stained Pages</title>
+            <link rel="stylesheet" href="public/Portfolio_Styles.css">
+
+            <style>
+
+              :root {
+                  --header-image: url('https://64.media.tumblr.com/01fb78fdbff613fc3bc5b6bbd66da232/9eca8a233fcd2538-01/s2048x3072/327dcb809e2e45d18d5981dd8f44401a040c25e3.jpg');
+                  --body-bg-image: url('https://i.pinimg.com/736x/47/f3/c7/47f3c726f71c015696d865fc801e030f.jpg');
+
+                  /* colors */
+                  --content: #4a3535;
+              }
+
+              /* start tabs */
+
+              /* end tabs */
+
+              @font-face {
+                  font-family: Nunito;
+                  src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+              }
+
+              @font-face {
+                  font-family: Nunito;
+                  src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+                  font-weight: bold;
+              }
+
+              @font-face {
+                  font-family: Nunito;
+                  src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
+                  font-style: italic;
+              }
+
+              @font-face {
+                  font-family: Nunito;
+                  src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
+                  font-style: italic;
+                  font-weight: bold;
+              }
+
+              body {
+                  font-family: 'Cambria', 'Franklin Gothic Book';
+                  margin: 0;
+                  background-color: #08031A;
+                  background-size: 70px;
+                  color: #fceaff;
+                  background-image: var(--body-bg-image);
+              }
+
+              * {
+                  box-sizing: border-box;
+              }
+
+
+              #container {
+                  max-width: 1000px;
+                  margin: 0 auto;
+              }
+
+              #container a {
+                  color: #d4b59b;
+                  font-weight: bold;
+
+              }
+
+              #header {
+                  width: 100%;
+                  background-color: #d0c7ea;
+                  height: 150px;
+                  background-image: var(--header-image);
+                  background-size: 100%;
+              }
+
+              #navbar {
+                  height: 40px;
+                  background-color: #352315;
+                  width: 100%;
+              }
+
+              #navbar ul {
+                  display: flex;
+                  padding: 0;
+                  margin: 0;
+                  list-style-type: none;
+                  justify-content: space-evenly;
+              }
+
+              #navbar li {
+                  padding-top: 10px;
+              }
+
+              #navbar li a {
+                  color: #bc9574;
+                  font-weight: 800;
+                  text-decoration: none;
+              }
+
+              #navbar li a:hover {
+                  color: #c37d21;
+                  text-decoration: underline;
+              }
+
+              #flex {
+                  display: flex;
+              }
+
+              aside {
+                  background-color: #1f312e;
+                  width: 200px;
+                  padding: 20px;
+                  font-size: smaller;
+              }
+
+
+              main {
+                  background-color: #69412b;
+                  flex: 1;
+                  padding: 20px;
+                  order: 2;
+              }
+
+
+              */ #leftSidebar {
+                  order: 1;
+              }
+
+              #rightSidebar {
+                  order: 3;
+              }
+
+              footer {
+                  background-color: #1a0d04;
+                  width: 100%;
+                  height: 40px;
+                  padding: 10px;
+                  text-align: center;
+                  background-image: url(https://64.media.tumblr.com/db91efeea526d87ac9970340d4b1a952/81a07c5c3126034b-1b/s2048x3072/0e19d7e35d984952af13aa2d1ab82245ebc532b7.pnj);
+                  background-repeat: repeat-x;
+                  background-size: 50%;
+
+              }
+
+              h1,
+              h2,
+              h3 {
+                  color: #d4b59b;
+              }
+
+              h1 {
+                  font-size: 25px;
+              }
+
+              strong {
+                  color: #d4b59b;
+              }
+
+              .box {
+                  background-color: #381f0e;
+                  border: 1px solid #d4b59b;
+                  padding: 10px;
+              }
+
+
+              #topBar {
+                  width: 100%;
+                  height: 30px;
+                  padding: 10px;
+                  font-size: smaller;
+                  background-color: #13092D;
+              }
+
+
+              @media only screen and (max-width: 800px) {
+                  #flex {
+                      flex-wrap: wrap;
+                  }
+
+                  aside {
+                      width: 100%;
+                  }
+
+                  main {
+                      order: 1;
+                  }
+
+                  #leftSidebar {
+                      order: 2;
+                  }
+
+                  #rightSidebar {
+                      order: 3;
+                  }
+
+                  #navbar ul {
+                      flex-wrap: wrap;
+                  }
+              }
+
+                .tab {
+                    overflow: hidden;
+                    border: 1px solid #0e1a33;
+                    background-color: #0e1a33;
+                }
+                
+                /* Style the buttons inside the tab */
+                .tab button {
+                    background-color: inherit;
+                    float: left;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 14px 16px;
+                    transition: 0.3s;
+                    font-size: 17px;
+                    color: #7badd1;
+                    font-family:'Cambria', 'Franklin Gothic Book';
+                }
+                
+                /* Change background color of buttons on hover */
+                .tab button:hover {
+                    background-color: #1f376d;
+                }
+                
+                /* Create an active/current tablink class */
+                .tab button.active {
+                    background-color: #1f376d;
+                }
+                
+                /* Style the tab content */
+                .tabcontent {
+                    display: none;
+                    padding: 6px 12px;
+                    border: 1px solid #0e1a33;
+                    border-top: none;
+                    background-color: #1f376d;
+                }
+                
+                /* Style the close button */
+                .topright {
+                    float: right;
+                    cursor: pointer;
+                    font-size: 28px;
+                }
+
+                .pColour, ul, li {
+                    color: #c3dbef;
+                }
+
+                p {
+                    color: white;
+                }
+
+                img {
+                    max-width:100%;
+                    height:auto;
+                }
+
+                video {
+                    max-width:100%;
+                    height:auto;
+                }
+
+                .topright:hover {color: rgb(117, 20, 20);}
+            </style>
+
+        </head>
+    <body>
+        
+        <div id="container">
+            <div id="headerArea">
+                <div id="header"></div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="/HomePage">Home</a></li>
+                        <li><a href="/AboutMe">About Me</a></li>
+                        <li><a href="/Portfolio">My Portfolio</a></li>
+                        <li><a href="/ContactMe">Contact Me</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="flex">
+                <aside id="leftSidebar">
+                    <img src="https://64.media.tumblr.com/2791072d905125d15901562b8e30a4e6/d730136c5b30e8ff-b6/s1280x1920/bae034607a5f5396e7b7a5925962338c7f6e0f3f.pnj" width="80%" style="padding-left: 25px;">
+                    <h2>Poetry</h2>
+                    <div class="box">
+                        <p>
+                            My life, it is late now, I am a bit tired; the sky is irritated by stars. 
+                            And I love you, I love you, I love you--and perhaps this is how a whole enormous world,
+                            shining all over, can be created--out of five vowels and three consonants.
+                        </p>
+                    </div>
+                    <img src="https://64.media.tumblr.com/1db23bbd99ec8db56569cb61e726bdc4/25e0032ff18a4e6c-85/s400x600/1f36e9ea4194403496fa0ff29bfc20db296cee6f.pnj" style="width: 90%; padding-top: 20px;">
+                    
+                </aside>
+                <main>
+                    <h2 style="color: #d4b59b" id="top">Projects</h2>
+                        <p>This includes projects from my school--excluding the website about Will Wood--which includes projects from 4 modules: Programming Fundamentals II (C210), 
+                            UI/UX Design for Apps (C218), Fundamentals of Design (C257) and Immersive Technologies (C337)</p>
+                             
+                        <p>Alongside experiences with my Interest Groups or Co-Curricular Activities which are both Performance Arts,
+                            being String Ensemble which I've taken part in during my time in Republic Polytechnic and Concert Band
+                            which took part during my Secondary School Years
+                        </p>
+
+                        <p >
+                            Lastly is my personal art which I've been growing since 2018. A handful of it consists of drawing for my self indulgence,
+                            which includes my favourite character, The Informant from Seekers Notes, and the others are drawings for friends or of friends.
+                        </p>
+                        
+
+                        <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'School Projects')">School Projects</button>
+                        <button class="tablinks" onclick="openCity(event, 'Band and Ensemble Experiences')">Band and Ensemble Experiences</button>
+                        <button class="tablinks" onclick="openCity(event, 'Personal Art')">Personal Art</button>
+                        </div>
+
+                        <div id="School Projects" class="tabcontent">
+                        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                        <h3><a href="#Web">Web Design</a></h3>
+                        <h3><a href="#UI">UI/UX</a></h3>
+                        <h3><a href="#Design">Design</a></h3>
+                        <h3><a href="#3D">3D Project</a></h3>
+                        <p class="pColour">Click one of these go to the respective sections!</p>
+                        <img src="/public/Projects/WW-Website.png" id="Web">
+                        <img src="/public/Projects/LJ-Website.png">
+                        <img src="/public/Projects/LJ-Website2.png">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+                        <h3 id="UI">UI/UX</h3>
+                        <img src="/public/Projects/Fit-UI.png">
+                        <img src="/public/Projects/Fit-UI2.png">
+                        <img src="/public/Projects/Music-UI.png">
+                        <img src="/public/Projects/Music-UI2.png">
+                        <img src="/public/Projects/Music-UI3.png">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+                        <h3 id="Design">Design</h3>
+                        <img src="/public/Projects/Logo-Design.png">
+                        <img src="/public/Projects/namecard1-coloured.png">
+                        <img src="/public/Projects/namecard1-back-coloured.png">
+                        <img src="/public/Projects/StickersGA-Recovered.png">
+                        <img src="/public/Projects/StickersGA-Recovered sticker1.png">
+                        <img src="/public/Projects/StickersGA-Recovered sticker2.png">
+                        <img src="/public/Projects/StickersGA-Recovered sticker3.png">
+                        <img src="/public/Projects/StickersGA-Recovered sticker4.png">
+                        <img src="/public/Projects/NC-Design1.webp">
+                        <img src="/public/Projects/LogoSketch-Design3.png">
+                        <img src="/public/Projects/LogoSketch-Design2.webp">
+                        <img src="/public/Projects/Travelly-Banner.jpg">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+                        <h3 id="3D">3D Projects</h3>
+                        <video controls>
+                            <source src="/public/Projects/MyEscapeRoomSharaKhoo.mp4" type="video/mp4">
+                        </video>
+                        <img src="/public/Projects/ER-3D.webp">
+                        <img src="/public/Projects/ER-3D2.webp">
+                        <img src="/public/Projects/ER-3D3.webp">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+                        
+                        </div>
+
+                        <div id="Band and Ensemble Experiences" class="tabcontent">
+                        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                        <h3>String Ensemble</h3>
+                        <p class="pColour">I was the first chair of the Bass section in Republic Polytechnic's String Ensemble from 2023 to 2024</p>
+                        <p class="pColour">Performances I've taken part in include:</p>
+                        <ul>
+                            <li>Collaborated with Chinese Ensemble and Purple Symphony for an event called Euphony 2023</li>
+                            <li>Performed at the Interest Group's standalone event called Da Capo 2024</li>
+                            <li>Participated and collaborated with other Interest Groups for Orientation (Jam & Hop) 2024</li>
+                            <li>Performed at an external event for Youth Corps' 10th Anniversary 2024</li>
+                        </ul>
+
+                        <h3>Concert Band</h3>
+                        <p class="pColour">I learnt how to play the Double Bass at Covent of the Holy Infant Jesus' (Toa Payoh) Concert Band from 2018 to 2022</p>
+                        <p class="pColour">Performances I've taken part in include:</p>
+                        <ul>
+                            <li>Performed for the Singapore Youth Festival in 2021 and received a certificate of distinction</li>
+                            <li>Istana Open House Performance in 2018</li>
+                        </ul>
+                        </div>
+
+                        <div id="Personal Art" class="tabcontent">
+                        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                        <h3><a href="#FullRender">Fully Rendered Pieces</a></h3>
+                        <h3><a href="#Sketch">Sketches</a></h3>
+                        <h3><a href="#Coloured">Coloured Pieces</a></h3>
+                        <h3><a href="#Doodles">Doodles</a></h3>
+                        <h3><a href="#Canvases">Canvases</a></h3>
+                        <p class="pColour">Click one of these go to the respective sections!</p>
+                        <img src="/public/Images/Atlas-FullRender.jpeg" id="FullRender">
+                        <p class="pColour">This is the piece of art that I made for a Hidden Object Game called Seekers Notes!</p>
+                        <img src="/public/Images/Lain-FullRender.png">
+                        <img src="/public/Images/Lain-FullRender2.png">
+                        <img src="/public/Images/Informant-FullRender.png">
+                        <img src="/public/Images/Informant-FullRender2.jpeg">
+                        <img src="/public/Images/Izzy-FullRender.png">
+                        <img src="/public/Images/KS-FullRender1.jpeg">
+                        <img src="/public/Images/KS-FullRender2.jpeg">
+                        <img src="/public/Images/KS-FullRender3.jpg">
+                        <img src="/public/Images/KS-FullRender4.jpg">
+                        <img src="/public/Images/KS-FullRender5.jpg">
+                        <img src="/public/Images/KS-FullRender6.png">
+                        <img src="/public/Images/Me-FullRender.jpg">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+
+                        <h3 id="Sketch">Sketches</h3>
+                        <img src="/public/Images/Atlas-Sketch1.jpeg">
+                        <img src="/public/Images/Atlas-Sketch2.png">
+                        <img src="/public/Images/Informant-Sketch1.jpeg">
+                        <img src="/public/Images/Informant-Sketch2.jpeg">
+                        <img src="/public/Images/KS-Sketch1.jpg">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+
+                        <h3 id="Coloured">Coloured Pieces</h3>
+                        <img src="/public/Images/AT-Coloured.jpg">
+                        <img src="/public/Images/KS-Coloured1.png">
+                        <img src="/public/Images/KS-Coloured2.png">
+                        <img src="/public/Images/KS-Coloured3.jpg">
+                        <img src="/public/Images/KS-Coloured4.jpg">
+                        <img src="/public/Images/MP-Coloured.jpeg">
+                        <img src="/public/Images/C&F-Coloured1.jpg">
+                        <img src="/public/Images/C&F-Coloured2.jpg">
+                        <img src="/public/Images/C&F-Coloured3.jpg">
+                        <img src="/public/Images/C&F-Coloured4.jpg">
+                        <img src="/public/Images/C&F-Coloured5.jpg">
+                        <img src="/public/Images/Amber-Coloured.jpeg">
+                        <img src="/public/Images/Maddie-Coloured.jpeg">
+                        <img src="/public/Images/Informant-Coloured.png">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+
+                        <h3 id="Doodles">Doodles</h3>
+                        <img src="/public/Images/KnS-Doodle.jpeg">
+                        <img src="/public/Images/KnS-Doodle2.jpg">
+                        <img src="/public/Images/WIH-Doodle.jpg">
+                        <img src="/public/Images/Alson-Doodle.jpeg">
+                        <img src="/public/Images/Ibuki-Doodle.jpeg">
+                        <img src="/public/Images/Qirin-Doodle.jpeg">
+                        <img src="/public/Images/Azulin-Doodle.jpg">
+                        <img src="/public/Images/Saoruma-Doodle.jpeg">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+
+                        <h3 id="Canvas">Canvases</h3>
+                        <img src="/public/Images/KS-Canvas1.png">
+                        <img src="/public/Images/KS-Canvas2.jpg">
+                        <img src="/public/Images/Null-Canvas.png">
+                        <img src="/public/Images/Ray-Canvas.png">
+                        <p style="text-decoration: underline;" class="pColour"><a href="#top">Back</a></p>
+                        </div>
+
+                        <script>
+                        function openCity(evt, cityName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+                        document.getElementById(cityName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                        }
+
+                        // Get the element with id="defaultOpen" and click on it
+                        document.getElementById("defaultOpen").click();
+                        </script>
+
+
+                </main>
+                <aside id="rightSidebar">
+                    <img src="https://64.media.tumblr.com/916ded433399a67e30e457564231a24e/d730136c5b30e8ff-65/s1280x1920/42596c8be07e9336eb805009b4bcb981be49dc01.pnj" width="80%" style="padding-left: 25px;">
+                    <h2>Poetry</h2>
+                    <div class="box">
+                        
+                        <ul style="padding-left:10px;">
+                            <p>I've been told<br>
+                            that people in the army<br>
+                            do more by 7:00 AM<br>
+                            than I do<br>
+                            in an entire day<br>
+                            but if I wake<br>        
+                            at 6:59 AM<br>
+                            and turn to you<br>
+                            to trace the outline of your lips<br>
+                            with mine,<br>
+                            I will have done enough<br>
+                            and killed no one<br>
+                            in the process.</p>
+                        </ul>
+                    </div>
+                    <img src="https://64.media.tumblr.com/c12eebe17688f0097a4c5f17703b66ff/25e0032ff18a4e6c-41/s500x750/3198bce0bcd8d9245806218dbbdf0da0024d95b1.pnj" style="width: 90%; padding-top: 20px;">
+                </aside>
+            </div>
+            <footer id="footer"> </footer>
+        </div>
+    
+    </body>
+</html>

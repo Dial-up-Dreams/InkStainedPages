@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Ink Stained Pages</title>
+            <link rel="stylesheet" href="StyleSheet.css">
+
+            <style>
+                :root {
+                    --header-image: url('https://64.media.tumblr.com/01fb78fdbff613fc3bc5b6bbd66da232/9eca8a233fcd2538-01/s2048x3072/327dcb809e2e45d18d5981dd8f44401a040c25e3.jpg');
+                    --body-bg-image: url('https://i.pinimg.com/736x/47/f3/c7/47f3c726f71c015696d865fc801e030f.jpg');
+
+                    /* colors */
+                    --content: #4a3535;
+                }
+
+
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+                }
+
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+                    font-weight: bold;
+                }
+
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
+                    font-style: italic;
+                }
+
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
+                    font-style: italic;
+                    font-weight: bold;
+                }
+
+                body {
+                    font-family: 'Cambria', 'Franklin Gothic Book';
+                    margin: 0;
+                    background-color: #08031A;
+                    background-size: 70px;
+                    color: #fceaff;
+                    background-image: var(--body-bg-image);
+                }
+
+                * {
+                    box-sizing: border-box;
+                }
+
+
+                #container {
+                    max-width: 1000px;
+                    margin: 0 auto;
+                }
+
+                #container a {
+                    color: #d4b59b;
+                    font-weight: bold;
+
+                }
+
+                #header {
+                    width: 100%;
+                    background-color: #d0c7ea;
+                    height: 150px;
+                    background-image: var(--header-image);
+                    background-size: 100%;
+                }
+
+                #navbar {
+                    height: 40px;
+                    background-color: #352315;
+                    width: 100%;
+                }
+
+                #navbar ul {
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+                    list-style-type: none;
+                    justify-content: space-evenly;
+                }
+
+                #navbar li {
+                    padding-top: 10px;
+                }
+
+                #navbar li a {
+                    color: #bc9574;
+                    font-weight: 800;
+                    text-decoration: none;
+                }
+
+                #navbar li a:hover {
+                    color: #c37d21;
+                    text-decoration: underline;
+                }
+
+                #flex {
+                    display: flex;
+                }
+
+                aside {
+                    background-color: #1f312e;
+                    width: 200px;
+                    padding: 20px;
+                    font-size: smaller;
+                }
+
+
+                main {
+                    background-color: #69412b;
+                    flex: 1;
+                    padding: 20px;
+                    order: 2;
+                }
+
+
+                */ #leftSidebar {
+                    order: 1;
+                }
+
+                #rightSidebar {
+                    order: 3;
+                }
+
+                footer {
+                    background-color: #1a0d04;
+                    width: 100%;
+                    height: 85px;
+                    padding: 10px;
+                    text-align: center;
+                    background-image: url(https://64.media.tumblr.com/2d8028c7ee10bebaea1fb650b0ebc274/d6793dcf1be55871-33/s2048x3072/8adc6d771b0a68e5ade00fe6f49178b0ea3ae267.pnj);
+                    background-repeat: repeat-x;
+                    background-size: 50%;
+
+                }
+
+                h1,
+                h2,
+                h3 {
+                    color: #d4b59b;
+                }
+
+                h1 {
+                    font-size: 25px;
+                }
+
+                strong {
+                    color: #d4b59b;
+                }
+
+                .box {
+                    background-color: #381f0e;
+                    border: 1px solid #d4b59b;
+                    padding: 10px;
+                }
+
+
+                #topBar {
+                    width: 100%;
+                    height: 30px;
+                    padding: 10px;
+                    font-size: smaller;
+                    background-color: #13092D;
+                }
+
+
+                @media only screen and (max-width: 800px) {
+                    #flex {
+                        flex-wrap: wrap;
+                    }
+
+                    aside {
+                        width: 100%;
+                    }
+
+                    main {
+                        order: 1;
+                    }
+
+                    #leftSidebar {
+                        order: 2;
+                    }
+
+                    #rightSidebar {
+                        order: 3;
+                    }
+
+                    #navbar ul {
+                        flex-wrap: wrap;
+                    }
+
+                }
+
+            </style>
+
+        </head>
+    <body>
+        
+        <div id="container">
+            <div id="headerArea">
+                <div id="header"></div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="/HomePage">Home</a></li>
+                        <li><a href="/AboutMe">About Me</a></li>
+                        <li><a href="/Portfolio">My Portfolio</a></li>
+                        <li><a href="/ContactMe">Contact Me</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="flex">
+                <aside id="leftSidebar">
+                    <img src="https://64.media.tumblr.com/2791072d905125d15901562b8e30a4e6/d730136c5b30e8ff-b6/s1280x1920/bae034607a5f5396e7b7a5925962338c7f6e0f3f.pnj" width="80%" style="padding-left: 25px;">
+                    <h2>WHY ARE YOU HAUNTED?</h2>
+                    <div class="box">
+                        <p>Choose all options that apply</p>
+                        <ul style="padding-left:10px;">
+                            <p>This haunting is hereditary. You remember hearing your grandmother crying inside the walls at night.
+                                 Sometimes if you closed your eyes and held your breath, you'd feel her hand searching for your under the covers. 
+                                 When you told your mom, she said it was only bad dreams.
+                            </p>
+                            <li>Do you know where the bad dreams come from? [Y/N]</li>
+                        </ul>
+                    </div>
+                    <img src="https://64.media.tumblr.com/1db23bbd99ec8db56569cb61e726bdc4/25e0032ff18a4e6c-85/s400x600/1f36e9ea4194403496fa0ff29bfc20db296cee6f.pnj" style="width: 90%; padding-top: 20px;">
+                    
+                </aside>
+                <main>
+                    <h1>Welcome to my Sanctuary</h1>
+                    <p><strong>Use the links above to get to whichever aspect of me you'd like to see.</strong></p>
+                    <img class="container" src="https://media.discordapp.net/attachments/1385186622445981820/1389627666579066953/Untitled100_20241108130459.png?ex=68654f1d&is=6863fd9d&hm=b73db6261f76ad1709197a71b88b20e6632d37f02caaa13dfd2a9d46ab5739e8&=&format=webp&quality=lossless&width=696&height=735" style="width: 70%; display: block; margin: auto;">
+                    <p>
+                        My name is Shara Khoo. I'm currently working in the IT field, specialising in UI/UX, Mobile App Development and Website Designing,
+                        I am also an Artist on the side, where I draw for a hobby.
+                    </p>
+
+
+                </main>
+                <aside id="rightSidebar">
+                    <img src="https://64.media.tumblr.com/916ded433399a67e30e457564231a24e/d730136c5b30e8ff-65/s1280x1920/42596c8be07e9336eb805009b4bcb981be49dc01.pnj" width="80%" style="padding-left: 25px;">
+                    <h2>WHY ARE YOU HAUNTED?</h2>
+                    <div class="box">
+                        <ul style="padding-left:10px;">
+                            <p>This haunting is architectural. It is not about you. It is about where you are. 
+                                There are bones in the foundation. This house is a graveyard. This house is a corpse. 
+                                You are inside the corpse. That makes you the maggot.
+                            </p>
+                            <li>Do you put it in your mouth? [Y/N]</li>
+                        </ul>
+                    </div>
+                    <img src="https://64.media.tumblr.com/c12eebe17688f0097a4c5f17703b66ff/25e0032ff18a4e6c-41/s500x750/3198bce0bcd8d9245806218dbbdf0da0024d95b1.pnj" style="width: 90%; padding-top: 20px;">
+                </aside>
+            </div>
+            <footer id="footer"> </footer>
+        </div>
+        
+    
+    </body>
+</html>
